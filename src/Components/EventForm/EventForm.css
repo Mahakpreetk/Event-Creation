@@ -1,0 +1,202 @@
+
+
+.form-container {
+ /* display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 400px;
+  margin: 20px auto; 
+  padding: 20px;
+  border-radius: 5px;*/
+  /*background-color: rgb(245, 242, 242);*/
+  margin-top: 60px;
+  background-color: white;
+}
+
+.placeholder-header {
+  font-size: 30px;
+  font-weight: bold;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+  width: 80%; /* Ensure full width */
+}
+
+.date-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  width: 50%;
+  margin-left: 30px;
+}
+
+.date-container label {
+  font-weight: bold;
+  margin-left: 30px;
+}
+
+.date-container input {
+  width: calc(85% - 20px);
+  padding: 8px;
+  border-radius: 4px;
+  border: none;
+  margin-bottom: 10px;
+  margin-left: 45px;
+}
+.description-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  width: 50%;
+  margin-left: 30px;
+}
+
+.description-container label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.description-container textarea {
+  width: calc(100% - 20px);
+  padding: 8px;
+  border-radius: 4px;
+  border: none;
+  margin-bottom: 10px;
+  resize: vertical; /* Allow vertical resizing */
+}
+.location-container {
+  margin-bottom: 20px;
+  margin-left: 50px;
+}
+
+.location-options {
+  display: flex;
+  margin-top: 19px;
+  margin-bottom: 20px;
+}
+
+.location-option {
+  display: inline-block;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 0; /* Remove default margin */
+  margin-right: 30px;
+}
+
+.location-option.selected {
+  background-color: #007bff;
+  color: white;
+}
+
+.location-option.selected:hover {
+  background-color: #0056b3;
+}
+
+.location-option input[type="radio"] {
+  display: none;
+}
+
+.location-input input {
+  width: 40%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+.image-upload {
+  margin-top: 50px;
+  align-items: center;
+  margin-left: 70%;
+  margin-top: -20%;
+  
+}
+
+.upload-label {
+  padding: 12px 20px;
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+ height: 40%;
+  margin-top: 50px;
+}
+
+.upload-label:hover {
+  background-color: #f9f9f9;
+}
+
+#file-upload {
+  display: none;
+}
+
+.image-preview {
+  border: 2px solid black;
+  margin-left: auto; /* Pushes the image to the right */
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+
+}
+
+.image-preview img {
+  border: 2px solid black;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+}
+.event-options {
+  margin-left: 50px;
+  background-color: lightgrey;
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 20%;
+}
+
+.event-options h2 {
+  margin-bottom: 15px;
+}
+.event-type-options {
+  display: flex;
+  gap: 10px;
+}
+
+.event-type-options label {
+  display: flex;
+  align-items: center;
+}
+
+.event-type-options input[type="radio"] {
+  margin-right: 5px;
+}
+
+.option {
+  margin-bottom: 15px;
+}
+
+.option label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.option input,
+.option select {
+  width: 50%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.option select {
+  width: 52%; /* Adjust width for select to align with input fields */
+}
