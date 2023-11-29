@@ -1,182 +1,138 @@
-
-
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-image: url('https://media.istockphoto.com/id/1133692578/photo/exhibition-event-hall-blur-background-of-trade-show-business-world-or-international-expo.jpg?s=612x612&w=0&k=20&c=RO8AoZjZyBz8ZU8tC6STPq2WVEwe13dr7Nem8yN3NZU=');
+  background-size: cover;
+  background-position: center;
+}
 .form-container {
- /* display: flex;
+  display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  max-width: 400px;
-  margin: 20px auto; 
   padding: 20px;
-  border-radius: 5px;*/
-  /*background-color: rgb(245, 242, 242);*/
-  margin-top: 60px;
-  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  max-width: 500px;
+  margin: auto;
+  margin-top: 20px;
+}
+ 
+.placeholder-header,
+.date-container,
+.description-container,
+.location-container,
+.image-upload,
+.event-options {
+  margin-bottom: 20px;
+}
+ .placeholder-header{
+  font-size: 24px;
+ }
+.date-input,
+.location-options,
+.event-type-options {
+  display: flex;
+  justify-content: space-between;
+}
+ 
+.location-option,
+.event-type-options label {
+  cursor: pointer;
+}
+.location-options {
+  display: flex;
+  margin-top: 20px;
+  margin-right: 70%;
+  margin-bottom: 10px; /* Adjust this value to reduce the gap */
+}
+.event-type-options{
+  margin-right: 60%;
+  gap: 30px;
+  margin-left: 20%;
+}
+.selected {
+  color: blue;
+}
+ 
+button {
+  padding: 10px 20px;
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+ 
+input[type="text"],
+input[type="datetime-local"],
+textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid blue;
+  transition: 0.3s;
+}
+ 
+input[type="text"]:focus,
+input[type="datetime-local"]:focus,
+textarea:focus {
+  border-bottom: 2px solid darkblue;
+}
+ 
+textarea {
+  resize: vertical;
+}
+ 
+.image-preview img {
+  margin-top: 2px;
+  width: 200px;
+  border: 1px solid gray;
+  height: 200px;
+  object-fit: cover;
+  z-index: 5;
+}
+ 
+.image-placeholder {
+  border: 2px dashed #ccc;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  color: #ccc;
+  margin-bottom: 10px;
+}
+ 
+.image-placeholder span {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+.form-container {
+  background-color: #f8f8f8;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 .placeholder-header {
-  font-size: 30px;
+  font-size: 24px;
   font-weight: bold;
-  border: none;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 8px;
-  margin-bottom: 20px;
-  width: 80%; /* Ensure full width */
+  color: #333;
 }
 
-.date-container {
-  display: flex;
-  flex-direction: column;
-  background-color: #f5f5f5;
-  padding: 10px;
+/* Adding some styling to input fields */
+input[type="text"],
+input[type="datetime-local"],
+textarea,
+select {
+  background-color: #fff;
   border-radius: 4px;
-  margin-bottom: 10px;
-  width: 50%;
-  margin-left: 30px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
 }
 
-.date-container label {
-  font-weight: bold;
-  margin-left: 30px;
-}
-
-.date-container input {
-  width: calc(85% - 20px);
-  padding: 8px;
-  border-radius: 4px;
-  border: none;
-  margin-bottom: 10px;
-  margin-left: 45px;
-}
-.description-container {
-  display: flex;
-  flex-direction: column;
-  background-color: #f5f5f5;
-  padding: 10px;
-  border-radius: 4px;
-  margin-bottom: 10px;
-  width: 50%;
-  margin-left: 30px;
-}
-
-.description-container label {
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-.description-container textarea {
-  width: calc(100% - 20px);
-  padding: 8px;
-  border-radius: 4px;
-  border: none;
-  margin-bottom: 10px;
-  resize: vertical; /* Allow vertical resizing */
-}
-.location-container {
-  margin-bottom: 20px;
-  margin-left: 50px;
-}
-
-.location-options {
-  display: flex;
-  margin-top: 19px;
-  margin-bottom: 20px;
-}
-
-.location-option {
-  display: inline-block;
-  padding: 8px 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  cursor: pointer;
-  margin: 0; /* Remove default margin */
-  margin-right: 30px;
-}
-
-.location-option.selected {
-  background-color: #007bff;
-  color: white;
-}
-
-.location-option.selected:hover {
-  background-color: #0056b3;
-}
-
-.location-option input[type="radio"] {
-  display: none;
-}
-
-.location-input input {
-  width: 40%;
-  padding: 8px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-}
-.image-upload {
-  margin-top: 50px;
-  align-items: center;
-  margin-left: 70%;
-  margin-top: -20%;
-  
-}
-
-.upload-label {
-  padding: 12px 20px;
-  border: 2px dashed #ccc;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
- height: 40%;
-  margin-top: 50px;
-}
-
-.upload-label:hover {
-  background-color: #f9f9f9;
-}
-
-#file-upload {
-  display: none;
-}
-
-.image-preview {
-  border: 2px solid black;
-  margin-left: auto; /* Pushes the image to the right */
-  width: 200px;
-  height: 200px;
-  overflow: hidden;
-
-}
-
-.image-preview img {
-  border: 2px solid black;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  min-width: 100%;
-  min-height: 100%;
-}
+/* Adjusting the event options layout */
 .event-options {
-  margin-left: 50px;
-  background-color: lightgrey;
-  padding: 20px;
-  border-radius: 5px;
-  margin-top: 20%;
-}
-
-.event-options h2 {
-  margin-bottom: 15px;
-}
-.event-type-options {
-  display: flex;
-  gap: 10px;
-}
-
-.event-type-options label {
-  display: flex;
-  align-items: center;
-}
-
-.event-type-options input[type="radio"] {
-  margin-right: 5px;
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
 }
 
 .option {
@@ -189,14 +145,57 @@
   margin-bottom: 5px;
 }
 
-.option input,
-.option select {
-  width: 50%;
-  padding: 8px;
+/* Styling the button */
+.button {
+  padding: 12px 24px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
   border-radius: 4px;
-  border: 1px solid #ccc;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.option select {
-  width: 52%; /* Adjust width for select to align with input fields */
+.button:hover {
+  background-color: #041204;
+}
+
+/* Enhancing radio buttons */
+.event-type-options label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.event-type-options input[type="radio"] {
+  margin-right: 8px;
+}
+
+/* Adjusting image upload styles */
+.image-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-placeholder {
+  border: 2px dashed #ccc;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  color: #ccc;
+  margin-bottom: 10px;
+  width: 100%;
+  max-width: 300px;
+  margin: 20px auto;
+}
+
+.image-placeholder span {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+/* Adjusting input field sizes */
+.date-input input[type="datetime-local"] {
+  width: calc(90% - 40px); /* Reducing the width by 40px */
 }

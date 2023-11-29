@@ -1,43 +1,49 @@
-import React from 'react';
-import './EventListing.css';
-import { useNavigate } from 'react-router-dom';
-import { fetchEventsAPI } from '../../Services/MockAPI';
+import React from "react";
+import "./EventListing.css";
+import { useNavigate } from "react-router-dom";
+import { fetchEventsAPI } from "../../Services/MockAPI";
 
 const EventListing = ({ events }) => {
-    const navigate = useNavigate(); 
-    const goBack = () => {
-        navigate('/'); // Navigates back to the EventForm page
-      };
+  const navigate = useNavigate();
+  const goBack = () => {
+    navigate("/");
+  };
+
   return (
     <div className="event-list">
       <h2>Event Listing</h2>
       {events.map((event, index) => (
         <div key={index} className="event-card">
-          <h3>{event.title}</h3>
-          <p>
-            <strong>Start:</strong> {event.startDate}, {event.startTime}
-          </p>
-          <p>
-            <strong>End:</strong> {event.endDate}, {event.endTime}
-          </p>
-          <p>
-            <strong>Location:</strong> {event.location}
-          </p>
-          <p>
-            <strong>Tickets:</strong> {event.tickets}
-          </p>
-          <p>
-            <strong>Capacity:</strong> {event.capacity}
-          </p>
-          <p>
-            <strong>Visibility:</strong> {event.visibility}
-          </p>
+          <div className="event-info">
+            <div className="date-day">
+              <p>
+                <strong>Date:</strong> {event.startDate}
+              </p>
+             
+            </div>
+            <div className="main-info">
+              <div className="event-title">
+                <h3 style={{ color: "#FF5733", fontSize: "30px", fontWeight: "bolder" }}>
+                  {event.title}
+                </h3>
+                <p style={{ fontSize: "18px", fontWeight:"bold" }}>{event.description}</p>
+                <p> {event.locationValue}</p>
+                <p><span style={{ color: "#888" }}>{event.endDate}</span></p>
+                <div>
+            <button style={{ fontSize: '12px' }}>Invited</button>
+            <span style={{ marginLeft: '8px' }}>{"+"+event.capacity}</span>
+          </div>
+              </div>
+            </div>
+          </div>
           {event.image && (
-            <img
-              src={URL.createObjectURL(event.image)}
-              alt="Event"
-              style={{ maxWidth: '200px' }}
-            />
+            <div className="event-image">
+              <img
+                src={URL.createObjectURL(event.image)}
+                alt="Event"
+                style={{ maxWidth: "200px" }}
+              />
+            </div>
           )}
         </div>
       ))}
